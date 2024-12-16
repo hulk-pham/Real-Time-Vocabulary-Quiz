@@ -73,16 +73,18 @@ const QuizSession = () => {
 
   function onSubmitFormQuestion(data) {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
-    setAnswers([...answers, {
+    const newAnwers = [...answers, {
       id: currentQuestion.id,
       ...data
-    }]);
+    }];
+
+    setAnswers(newAnwers);
 
     if (currentQuestionIndex === questions.length - 1) {
       socket.emit(EVENT_KEY.SUBMIT_QUIZ_ANSWERS, {
         quizSessionId: userScore.quizSessionId,
         userId: userScore.userId,
-        answers: answers,
+        answers: newAnwers,
       }, (response: any) => {
         setLeaderBoard(response.leaderboards);
         setUserScore(response.userScores);
