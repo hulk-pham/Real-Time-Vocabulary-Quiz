@@ -1,0 +1,82 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.max-w-screen-custom {
+  max-width: 1200px;
+}
+
+/* override blog pagination */
+.custom-pagination li {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  color: #d3d6d8;
+}
+
+.custom-pagination li.selected {
+  color: #0D6EFD;
+}
+
+.custom-pagination li:first-of-type {
+  margin-right: 24px;
+  margin-bottom: 0px;
+}
+
+.custom-pagination li:last-of-type {
+  margin-left: 24px;
+  margin-bottom: 0px;
+}
+
+/* override @strapi/blocks-react-renderer */
+.prose {
+  max-width: 100%;
+}
+
+/* override carousel */
+@media only screen and (min-width: 768px) {
+  .carousel img {
+    max-width: unset !important;
+  }
+}
+
+.carousel img {
+  max-width: 175%;
+}
+
+.title-carousel {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+.title-carousel div div:nth-child(1) {
+  transform: translateY(-50%) translateX(-25%) scale(0.8) !important;
+}
+
+.title-carousel div div:nth-child(2) span {
+  border-bottom: 2px solid #0D6EFD;
+}
+
+.title-carousel div div:nth-child(3) {
+  transform: translateY(-50%) translateX(-75%) scale(0.8) !important;
+}
+
+.enterprise-jumbotron-ctn {
+  background-image: url(/assets/enterprise/jumbotron-bg.png);
+  background-size: 45%;
+  background-repeat: no-repeat;
+  background-position-y: 40%;
+  background-position-x: right;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .enterprise-jumbotron-ctn {
+    background: none !important;
+  }
+}
